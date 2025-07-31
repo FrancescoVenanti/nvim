@@ -1,57 +1,36 @@
-<img width="1680" alt="Screenshot 2025-12-14 at 12 56 59 PM" src="https://github.com/user-attachments/assets/1d092671-9175-46ec-922b-4293b549b113" />
+# pwnvim
 
+My personal neovim config, forked from [pwnwriter/pwnvim](https://github.com/pwnwriter/pwnvim).
 
-<img width="1680" alt="Screenshot 2025-12-14 at 12 57 41 PM" src="https://github.com/user-attachments/assets/4e0655f9-c590-4e11-bf63-a3c070cc2605" />
-
-
-----
+## Install
 
 ```bash
-git clone https://github.com/pwnwriter/pwnvim ~/.config/nvim
+git clone https://github.com/YOUR_USERNAME/pwnvim ~/.config/nvim
 nvim --headless +"Lazy! sync" +qa
 ```
----
-```bash
-nix develop github:pwnwriter/pwnvim
-```
 
-## 🍦 Tips
+## Features
 
-   
-> [!IMPORTANT]
-> ***This config requires latest [Neovim][Neovim] build !***
+- **Plugin Manager**: lazy.nvim
+- **File Explorer**: mini.files
+- **Fuzzy Finder**: mini.pick
+- **LSP**: Native LSP with blink.cmp
+- **Theme**: Catppuccin
 
--   You can Set `NVIM_DEV` environment variable to modify where [**`lazy.nvim`**][Lazy.nvim]
-    should look for `dev = true` plugins.
+## Keybindings
 
--   To install [**`treesitter`**][Treesitter] of `x` language Run `:TSInstall [x]` !
--   On [`NIX`][Nix] , run `nix develop` to enter a shell with `pwnvim` .
--   Install `lsp servers` and configure inside [**`lsp.lua`**][LSP].
--   See **`:h vim.lsp.config`** to get an understanding of how
-    you would setup a language server protocol.
-    ```lua
-    -- plugins/lsp.lua
-    vim.lsp.config.lua_ls = {
-      cmd = { "lua-language-server" },
-      filetypes = { "lua" },
-      root_markers = { ".luarc.json", ".git", vim.uv.cwd() },
-      settings = {
-        Lua = {
-          telemetry = {
-            enable = false,
-          },
-        },
-      },
-    }
-    ```
-  
-<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
-<p align="center">Copyright &copy; 2022 - present <a href="https://pwnwriter.me" target="_blank"> pwnwriter me<a> 🍃</a> 
+- Leader: `<Space>`
+- Find files: `<leader>ff`
+- File explorer: `<leader>e`
+- Live grep: `<leader>fw`
 
-[Neovim]: https://github.com/neovim/neovim
-[Lazy.nvim]: https://github.com/folke/lazy.nvim
-[Lspconfig]: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-[Treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
-[Mason]: https://github.com/williamboman/mason.nvim
-[LSP]: /lua/lsp.lua
-[Nix]: https://github.com/NixOS/nix
+## Requirements
+
+- Neovim 0.10+
+- Git
+- A [Nerd Font](https://www.nerdfonts.com/)
+- ripgrep (for live grep)
+
+## License
+
+MIT
