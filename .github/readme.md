@@ -5,7 +5,7 @@ My personal neovim config, forked from [pwnwriter/pwnvim](https://github.com/pwn
 ## Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pwnvim ~/.config/nvim
+git clone https://github.com/francescovenanti/nvim ~/.config/nvim
 nvim --headless +"Lazy! sync" +qa
 ```
 
