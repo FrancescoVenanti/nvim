@@ -1,4 +1,4 @@
-# pwnvim
+# FVim
 
 My personal neovim config, forked from [pwnwriter/pwnvim](https://github.com/pwnwriter/pwnvim).
 
