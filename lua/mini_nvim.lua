@@ -70,28 +70,21 @@ M.clue = {
   triggers = {
     { mode = "n", keys = "<Leader>" },
     { mode = "x", keys = "<Leader>" },
-
     { mode = "i", keys = "<C-x>" },
-
     { mode = "n", keys = "g" },
     { mode = "x", keys = "g" },
-
     { mode = "n", keys = "'" },
     { mode = "n", keys = "`" },
     { mode = "x", keys = "'" },
     { mode = "x", keys = "`" },
-
     { mode = "n", keys = '"' },
     { mode = "x", keys = '"' },
     { mode = "i", keys = "<C-r>" },
     { mode = "c", keys = "<C-r>" },
-
     { mode = "n", keys = "<C-w>" },
-
     { mode = "n", keys = "z" },
     { mode = "x", keys = "z" },
   },
-
   clues = {
     miniclue.gen_clues.builtin_completion(),
     miniclue.gen_clues.g(),
@@ -107,7 +100,7 @@ M.git = {}
 M.diff = {
   view = {
     style = "sign",
-    signs = { add = " ", change = " ", delete = "" },
+    signs = { add = " ", change = " ", delete = "" },
   },
 }
 
@@ -116,53 +109,28 @@ local starter = require "mini.starter"
 M.starter = {
   evaluate_single = false,
   header = table.concat({
-    "                                   ",
-    "                                   ",
-    "                                   ",
-    "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
-    "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
-    "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
-    "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
-    "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
-    "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
-    "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
-    " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
-    " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
-    "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
-    "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
-    "                                   ", }, "\n"),
-  footer = os.date("%B %d, %I:%M %p"),
+    "",
+    "    ✦   ███████╗██╗   ██╗   ✦       ",
+    "  ✧     ██╔════╝██║   ██║     ✧     ",
+    "    ✦   █████╗  ██║   ██║   ✦       ",
+    "  ✧     ██╔══╝  ╚██╗ ██╔╝     ✧     ",
+    "    ✦   ██║      ╚████╔╝    ✦       ",
+    "        ╚═╝       ╚═══╝             ",
+    "              ✧       ✦             ",
+    "",
+  }, "\n"),
+  footer = "",
   items = {
-    {
-      name = "  Bookmarked Files",
-      action = "lua MiniExtra.pickers.visit_paths { filter = 'todo' }",
-      section = " Actions ",
-    },
-    {
-      name = "  Lazy Update",
-      action = ":Lazy update",
-      section = " Actions ",
-    },
-    {
-      name = "  Open Blank File",
-      action = ":enew",
-      section = " Actions ",
-    },
-    {
-      name = "  Find Files",
-      action = "lua MiniPick.builtin.files()",
-      section = " Actions ",
-    },
-    {
-      name = "  Recent Files",
-      action = "lua MiniExtra.pickers.oldfiles()",
-      section = " Actions ",
-    },
-    {
-      name = "  Quit",
-      action = ":q!",
-      section = " Actions ",
-    },
+    { name = " Find Files",   action = "lua MiniPick.builtin.files()",            section = "Core",     key = "f" },
+    { name = " Recent Files", action = "lua MiniExtra.pickers.oldfiles()",        section = "Core",     key = "r" },
+    { name = " Find Text",    action = "lua MiniPick.builtin.grep_live()",        section = "Core",     key = "t" },
+    { name = " File Explorer", action = "lua require('mini.files').open()",       section = "Core",     key = "e" },
+    { name = " New File",     action = ":enew",                                   section = "File",     key = "n" },
+    { name = " Bookmarks",    action = "lua MiniExtra.pickers.visit_paths()",     section = "File",     key = "b" },
+    { name = " Typing Test",  action = ":Typr",                                   section = "Fun",      key = "y" },
+    { name = " Config",       action = ":e ~/.config/nvim/init.lua",              section = "Settings", key = "c" },
+    { name = " Lazy",         action = ":Lazy",                                   section = "Settings", key = "l" },
+    { name = " Quit",         action = ":qa",                                     section = "Settings", key = "q" },
   },
   content_hooks = {
     starter.gen_hook.aligning("center", "center"),

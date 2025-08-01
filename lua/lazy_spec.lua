@@ -4,7 +4,8 @@ require("lazy").setup("plugins", {
     lazy = true,
   },
   install = {
-    colorscheme = { "catppuccin" },
+    -- colorscheme = { "catppuccin" },
+    colorscheme = {"gruvbox"},
   },
   dev = {
     path = vim.env.NVIM_DEV,
